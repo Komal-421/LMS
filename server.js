@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const cookies = require('cookie-parser');
 const authRoute = require('./routes/authRoute');
-const courseRoute = require('./routes/authRoute');
+const courseRoute = require('./routes/courseRoute');
 const facultyRoute = require('./routes/facultyRoute');
 const studentRoute = require('./routes/studentRoute');
 

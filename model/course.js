@@ -5,11 +5,18 @@ const faculty = require('./faculty');
 const courseSchema = new mongoose.Schema({
     courseName: { type: String, required: true, trim: true },
     courseCode: {
-        type: mongoose.Schema.Types.ObjectId, required: true, unique: true,
-        ref: ['student', 'faculty']
+        // type: mongoose.Schema.Types.ObjectId, 
+        required: true, unique: true,
+        type: String,
+        // ref: ['student', 'faculty']
     },     //student must know course code and teacher also, who will teach the course 
     description: { type: String, required: true },
-    department: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'faculty' }, //every faculty must know what department he is in
+    department: {
+        //  type: mongoose.Schema.Types.ObjectId,
+        type: String,
+        required: true,
+        //  ref: 'faculty' 
+    }, //every faculty must know what department he is in
     semester: { type: Number, required: true }
 })
 
