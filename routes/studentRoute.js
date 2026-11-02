@@ -7,7 +7,7 @@ const { checkUpdates } = require('../middleware/checkUpdates');
 
 router.get('/students', getAllStudents);
 router.get('/students/:id', getStudentById);
-router.put('/students/:id', checkUpdates, updateStudent);
+router.put('/students/:id', verifyToken, checkUpdates, updateStudent);
 router.delete('/students/:id', verifyToken, allowRole, deleteStudent);
 
 module.exports = router;

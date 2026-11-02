@@ -8,11 +8,15 @@ const courseRoute = require('./routes/courseRoute');
 const facultyRoute = require('./routes/facultyRoute');
 const studentRoute = require('./routes/studentRoute');
 
+
 app.use(express.json())
 app.use('/api', authRoute);
 app.use('/api', courseRoute);
 app.use('/api', facultyRoute);
 app.use('/api', studentRoute);
+app.use((req, res) => {
+    return res.status(404).json({ 'message': 'Page does not exist!' });
+});
 
 app.use(cookies());
 
